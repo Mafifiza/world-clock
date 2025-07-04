@@ -28,7 +28,7 @@ select {
 .container {
   max-width: 600px;
   margin: 30px auto;
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 .glassmorphism {
@@ -75,8 +75,7 @@ select {
 footer {
   text-align: center;
   font-size: 18px;
-  color: #233142;
-  font-weight: bold;
+  color: #000000;
 }
 
 strong {
