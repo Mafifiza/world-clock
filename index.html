@@ -3,34 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libertinus+Math&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/styles.css" />
     <title>World Clock - Refilwe Motaung</title>
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
+      <div class="glassmorphism">
+        <h1>World Clock</h1>
 
-      <select>
-        <option value="">Select a city...</option>
-        <option value="">Johannesburg</option>
-        <option value="">Istanbul</option>
-        <option value="">Malta</option>
-        <option value="">Maldives</option>
-      </select>
+        <select>
+          <option value="">Select a city...</option>
+          <option value="">Johannesburg</option>
+          <option value="">Istanbul</option>
+          <option value="">Malta</option>
+          <option value="">Maldives</option>
+        </select>
 
-      <div class="city">
-        <h2>Moscow</h2>
-        <div class="date">4th July 2025</div>
-        <div class="time">06:20:12 AM</div>
-      </div>
-      <div class="city">
-        <h2>Kinshasa</h2>
-        <div class="date">4th July 2025</div>
-        <div class="time">06:20:12 AM</div>
+        <div class="city">
+          <div>
+            <h2>Moscow</h2>
+            <div class="date">4th July 2025</div>
+          </div>
+          <div class="time">06:20:12 <small> AM </small></div>
+        </div>
+        <div class="city">
+          <div>
+            <h2>Kinshasa</h2>
+            <div class="date">4th July 2025</div>
+          </div>
+          <div class="time">06:20:12 <small> AM </small></div>
+        </div>
       </div>
     </div>
     <footer>
-      This project was coded with ❤️ by Refilwe Motaung and is
+      This project was coded with ❤️ by <strong>Refilwe Motaung</strong> and is
       <a href="https://github.com/Mafifiza/world-clock" target="_blank">
         open-sourced on GitHub</a
       >
