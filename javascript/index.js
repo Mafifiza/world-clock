@@ -12,15 +12,15 @@ function updateTime() {
     );
   }
 
-  // Kinshasa
-  let kinshasaElement = document.querySelector("#kinshasa");
-  if (kinshasaElement) {
-    let kinshasaDateElement = kinshasaElement.querySelector(".date");
-    let kinshasaTimeElement = kinshasaElement.querySelector(".time");
-    let kinshasaTime = moment().tz("Africa/Kinshasa");
+  // Fiji
+  let mexicoElement = document.querySelector("#mexico");
+  if (mexicoElement) {
+    let mexicoDateElement = mexicoElement.querySelector(".date");
+    let mexicoTimeElement = mexicoElement.querySelector(".time");
+    let mexicoTime = moment().tz("America/Mexico_City");
 
-    kinshasaDateElement.innerHTML = kinshasaTime.format("Do MMMM YYYY");
-    kinshasaTimeElement.innerHTML = kinshasaTime.format(
+    mexicoDateElement.innerHTML = mexicoTime.format("Do MMMM YYYY");
+    mexicoTimeElement.innerHTML = mexicoTime.format(
       "hh:mm:ss [<small>]A[</small>]"
     );
   }
