@@ -1,26 +1,52 @@
 function updateTime() {
   // Moscow
   let moscowElement = document.querySelector("#moscow");
-  let moscowDateElement = moscowElement.querySelector(".date");
-  let moscowTimeElement = moscowElement.querySelector(".time");
-  let moscowTime = moment().tz("Europe/Moscow");
+  if (moscowElement) {
+    let moscowDateElement = moscowElement.querySelector(".date");
+    let moscowTimeElement = moscowElement.querySelector(".time");
+    let moscowTime = moment().tz("Europe/Moscow");
 
-  moscowDateElement.innerHTML = moscowTime.format("Do MMMM YYYY");
-  moscowTimeElement.innerHTML = moscowTime.format(
-    "hh:mm:ss [<small>]A[</small>]"
-  );
+    moscowDateElement.innerHTML = moscowTime.format("Do MMMM YYYY");
+    moscowTimeElement.innerHTML = moscowTime.format(
+      "hh:mm:ss [<small>]A[</small>]"
+    );
+  }
 
   // Kinshasa
   let kinshasaElement = document.querySelector("#kinshasa");
-  let kinshasaDateElement = kinshasaElement.querySelector(".date");
-  let kinshasaTimeElement = kinshasaElement.querySelector(".time");
-  let kinshasaTime = moment().tz("Africa/Kinshasa");
+  if (kinshasaElement) {
+    let kinshasaDateElement = kinshasaElement.querySelector(".date");
+    let kinshasaTimeElement = kinshasaElement.querySelector(".time");
+    let kinshasaTime = moment().tz("Africa/Kinshasa");
 
-  kinshasaDateElement.innerHTML = kinshasaTime.format("Do MMMM YYYY");
-  kinshasaTimeElement.innerHTML = kinshasaTime.format(
-    "hh:mm:ss [<small>]A[</small>]"
-  );
+    kinshasaDateElement.innerHTML = kinshasaTime.format("Do MMMM YYYY");
+    kinshasaTimeElement.innerHTML = kinshasaTime.format(
+      "hh:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 updateTime();
 setInterval(updateTime, 1000);
+
+function updateCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+  <div class="city">
+    <div>
+      <h2>${cityName}</h2>
+      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+    </div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
+    "A"
+  )}</small></div>
+  </div>
+  `;
+}
+
+let citiesSelectElement = document.querySelector("#city");
+
+citiesSelectElement.addEventListener("change", updateCity);
